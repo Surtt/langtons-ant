@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+:root {
+  /*========== Fonts and typography ==========*/
+  --body-font: 'Noto Sans', sans-serif;
+  --h1-fs: 2rem;
+  --h2-fs: 1.5rem;
+  --h3-fs: 1.25rem;
+  --normal-fs: 1rem;
+  --small-fs: .7rem;
+
+  /*========== Colors ==========*/
+  --bg-color: 0, 0%, 97%;
+  --text-color: #337ab7;
+  --border-color: #337ab7;
+
+  /*========== Paddings ==========*/
+  --padding-box: 1rem;
+
+  /*========== Borders ==========*/
+  --border: 1px solid var(--border-color);
+
+  /*========== Margins ==========*/
+  --mb-1: .1rem;
+  --mb-2: .5rem;
+  --mb-3: 1rem;
+  --mb-4: 1.5rem;
+  --mb-5: 2rem;
+  --mb-6: 2.5rem;
+}
+
+*,
+::before,
+::after{
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: hsl(var(--bg-color));
+  font-size: var(--normal-fs);
+  color: var(--text-color);
+}
+
+body, h1, h2, h3, p, ul{
+  margin: 0;
+}
+
+ul{
+  padding: 0;
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  padding: var(--padding-box);
+  max-width: calc(35em + 1px);
+  min-width: 400px;
+  margin: 0 auto;
+}
+
+.title {
+  margin-bottom: var(--mb-6);
+  font-size: var(--h1-fs);
+  text-align: center;
+}
+
+.board {
+  width: 100%;
+  border-collapse: collapse;
+  border: var(--border);
+  margin-bottom: 1em;
+}
+
+.board__cell {
+  border: var(--border);
+  padding-bottom: calc(1rem - 5px);
+}
+
+.controls {
+  display: inline-flex;
+  padding: 10px 12px;
+  margin-bottom: var(--mb-3);
+  background-color: #efefef;
+  border-radius: 5px;
+}
+
+.btn {
+  display: flex;
+  margin-right: var(--mb-2);
+  padding: 5px;
+  border-radius: 3px;
+  background-color: var(--bg-color);
+  border: var(--border);
+}
+
+.btn:last-child {
+  margin-right: 0;
+}
+
+.btn__img {
+  width: 20px;
+  fill: var(--text-color);
+}
