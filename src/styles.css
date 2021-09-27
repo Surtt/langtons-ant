@@ -73,18 +73,6 @@ img{
   text-align: center;
 }
 
-.board {
-  width: 100%;
-  border-collapse: collapse;
-  border: var(--border);
-  margin-bottom: 1em;
-}
-
-.board__cell {
-  border: var(--border);
-  padding-bottom: calc(1rem - 5px);
-}
-
 .controls {
   display: inline-flex;
   padding: 10px 12px;
