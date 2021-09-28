@@ -23,14 +23,14 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ['style-loader", "css-loader'],
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: "Langton's Ant",
-      template: 'index.html',
+      template: './public/index.html',
     }),
   ],
 };
