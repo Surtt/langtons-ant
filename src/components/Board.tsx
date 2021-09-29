@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
 import { Line } from './Line';
 import { generateField } from '../helpers/Field';
-import { Ant } from '../helpers/Ant';
+import { generateAntPosition } from '../helpers/Ant';
 
 export const Board: FC = () => {
-  const basicSize = 21;
+  const basicSize = 15;
   const defaultCellState = false;
   const cells = generateField(basicSize, defaultCellState);
-  const ant = Ant(10, 10);
+  const ant = generateAntPosition(0, basicSize);
   return (
     <div className="stretch">
       <table className="board">
