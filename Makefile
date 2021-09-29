@@ -1,5 +1,5 @@
 develop:
-	npx webpack serve
+	npx webpack serve --open
 
 install:
 	npm ci
@@ -10,6 +10,12 @@ build:
 
 test:
 	npm test
+
+watch:
+	npm test -- --watch
+
+test-coverage:
+	npm test -- --coverage --coverageProvider=babel
 
 lint:
 	npx eslint .
