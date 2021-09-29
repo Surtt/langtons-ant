@@ -1,19 +1,23 @@
 import React, { FC } from 'react';
-import Cell from './Cell';
+import { Cell } from './Cell';
+import { Coords } from '../helpers/Ant';
 
 interface LineProps {
   line: boolean[];
   index: number;
+  ant: Coords;
 }
 
-const Line: FC<LineProps> = ({ line, index }) => {
+export const Line: FC<LineProps> = ({ line, index, ant }) => {
+  const [x, y] = ant;
   return (
     <tr className="line">
-      {line.map((cell, idx) => {
-        return <Cell key={`line_${index}-cell_${idx}`} />;
-      })}
+      {line.map((cell, idx) => (
+        <Cell
+          key={`line_${index}-cell_${idx}`}
+          ant={index === y && idx === x ? ant : undefined}
+        />
+      ))}
     </tr>
   );
 };
-
-export default Line;

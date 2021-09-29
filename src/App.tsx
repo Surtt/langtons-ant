@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import Board from './components/Board';
+import { Board } from './components/Board';
 
 const App: FC = () => (
   <>
