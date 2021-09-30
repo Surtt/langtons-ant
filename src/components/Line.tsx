@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Cell } from './Cell';
-import { Coords } from '../helpers/Ant';
+import { Coords } from '@/helpers/Ant';
 
 interface LineProps {
   line: boolean[];

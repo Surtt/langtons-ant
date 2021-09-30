@@ -4,7 +4,7 @@ import { generateField } from '../helpers/Field';
 import { generateAntPosition } from '../helpers/Ant';
 
 export const Board: FC = () => {
-  const basicSize = 15;
+  const basicSize = 5;
   const defaultCellState = false;
   const cells = generateField(basicSize, defaultCellState);
   const ant = generateAntPosition(0, basicSize);
