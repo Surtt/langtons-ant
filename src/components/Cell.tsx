@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { Coords } from '../helpers/Ant';
+import { Ant } from '@/helpers/Ant';
 
 interface CellProps {
-  ant?: Coords;
+  ant?: Ant;
 }
 
 export const Cell: FC<CellProps> = ({ ant }) => {

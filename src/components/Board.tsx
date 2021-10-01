@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Line } from './Line';
-import { generateField } from '../helpers/Field';
-import { generateAntPosition } from '../helpers/Ant';
+import { generateField } from '@/helpers/Field';
+import { generateAntPosition } from '@/helpers/Ant';
 
 export const Board: FC = () => {
   const basicSize = 5;

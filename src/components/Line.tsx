@@ -1,21 +1,21 @@
 import React, { FC } from 'react';
 import { Cell } from './Cell';
-import { Coords } from '@/helpers/Ant';
+import { Ant } from '@/helpers/Ant';
 
 interface LineProps {
   line: boolean[];
   index: number;
-  ant: Coords;
+  ant: Ant;
 }
 
 export const Line: FC<LineProps> = ({ line, index, ant }) => {
-  const [x, y] = ant;
+  const { xAnt, yAnt } = ant;
   return (
     <tr className="line">
       {line.map((cell, idx) => (
         <Cell
           key={`line_${index}-cell_${idx}`}
-          ant={index === y && idx === x ? ant : undefined}
+          ant={index === xAnt && idx === yAnt ? ant : undefined}
         />
       ))}
     </tr>
