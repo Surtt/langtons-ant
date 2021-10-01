@@ -35,8 +35,14 @@ export const generateAntPosition = (
   };
 };
 
-export const changeAntState = (rotation: number, direction: number): Ant => {
-  const value = { xAnt: 0, yAnt: 0, rotation: 0 };
+export const changeAntState = (
+  rotation: number,
+  direction: boolean
+): {
+  xAnt: number;
+  yAnt: number;
+} => {
+  const value = { xAnt: 0, yAnt: 0 };
   // const { rotation, direction } = antRotation;
   switch (rotation) {
     case 90:
@@ -59,7 +65,7 @@ export const changeAntState = (rotation: number, direction: number): Ant => {
   return value;
 };
 
-export const newRotation = (rotation: number, direction: number): number => {
+export const newRotation = (rotation: number, direction: boolean): number => {
   // const { rotation, direction } = antRotation;
   let newRotation = rotation + 90;
   if (direction) {
