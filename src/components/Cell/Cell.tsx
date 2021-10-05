@@ -13,8 +13,6 @@ export interface CellProps {
 }
 
 export const Cell: FC<CellProps> = ({ ant, cell }) => {
-  const hasAnt = ant ? 'ant' : '';
-  const styleWithAntOrNot = `content ${hasAnt}`;
   return (
     <CellTd>
       <Box>

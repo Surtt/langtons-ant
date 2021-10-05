@@ -54,23 +54,3 @@ const ControlsWrap = styled.div`
   background-color: #efefef;
   border-radius: 5px;
 `;
-
-const Box = styled.div`
-  position: relative;
-  width: 100%;
-  &:before {
-    content: "";
-    display: block;
-    padding-top: 100%;
-  }
-`;
-
-const EmptyCell = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-`;
-
-

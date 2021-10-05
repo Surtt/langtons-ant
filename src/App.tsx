@@ -11,14 +11,12 @@ import { Ant } from './helpers/Ant';
 const App: FC = () => {
   const basicSize = 10;
   const defaultCellState = false;
-  const cells = generateField(basicSize, defaultCellState);
-  const ant = generateAntPosition(0, basicSize);
-  // const [ant, setAnt] = useState<Ant>();
-  // const [cells, setCells] = useState<Field>()
-  // useEffect(() => {
-  //   setCells(generateField(basicSize, defaultCellState));
-  //   setAnt(generateAntPosition(0, basicSize));
-  // });
+  const [ant, setAnt] = useState<Ant>({ xAnt: 0, yAnt: 0, rotation: 0 });
+  const [cells, setCells] = useState<Field>([])
+  useEffect(() => {
+    setCells(generateField(basicSize, defaultCellState));
+    setAnt(generateAntPosition(0, basicSize));
+  }, []);
   return (
     <div style={{ margin: '0 auto ' }}>
       <AppTitle>Langton's Ant</AppTitle>

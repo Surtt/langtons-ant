@@ -1,6 +1,5 @@
 import React, { FC, ReactChild } from 'react';
 import styled from '@emotion/styled';
-import { jsx } from '@emotion/react';
 
 export interface ButtonProps {
   /**
