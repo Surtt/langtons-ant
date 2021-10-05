@@ -1,5 +1,5 @@
-type Cell = false | true;
-type Line = Cell[];
+export type Cell = false | true;
+export type Line = Cell[];
 export type Field = Line[];
 
 export const generateField = (size: number, state: Cell): Field =>

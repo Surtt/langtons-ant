@@ -1,4 +1,4 @@
-develop:
+start:
 	npx webpack serve --open
 
 install:
@@ -20,4 +20,10 @@ test-coverage:
 lint:
 	npx eslint .
 
+story:
+	npm run storybook
+
+build-story:
+	npm run build-storybook
+	
 .PHONY: test
