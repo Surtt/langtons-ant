@@ -11,12 +11,27 @@ make install
 
 ### Development mode
 ```
-make develop
+make start
 ```
 
 ### Production mode
 ```
 make build
+```
+
+### Project testing
+```
+make test
+```
+
+### To run Storybook
+```
+make story
+```
+
+### To run Chromatic
+```
+make chromatic
 ```
 
 ### Ссылка на проект

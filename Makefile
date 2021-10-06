@@ -25,5 +25,8 @@ story:
 
 build-story:
 	npm run build-storybook
+
+chromatic:
+	npm run chromatic
 	
 .PHONY: test

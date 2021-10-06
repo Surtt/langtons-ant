@@ -1,15 +1,11 @@
-export type Coords = [number, number, number];
+import { Cell } from '@/helpers/Field';
+export type Coords = [number, number];
 
 type RandomGenerator<R = number> = (
   min: number,
   max: number,
   rotation?: number
 ) => R;
-
-type AntRotation = {
-  rotation: number;
-  direction: number;
-};
 
 export type Ant = {
   xAnt: number;
@@ -21,11 +17,11 @@ const generateNumber: RandomGenerator = (min, max) => {
   return Math.floor(Math.random() * (max - min)) + min;
 };
 
-export const generateAntPosition = (
+export const generateAntPosition: RandomGenerator<Ant> = (
   min: number,
   max: number,
   rotation = 0
-): Ant => {
+) => {
   const xAnt = generateNumber(min, max);
   const yAnt = generateNumber(min, max);
   return {
@@ -37,13 +33,12 @@ export const generateAntPosition = (
 
 export const changeAntState = (
   rotation: number,
-  direction: boolean
+  cell: Cell,
 ): {
   xAnt: number;
   yAnt: number;
 } => {
   const value = { xAnt: 0, yAnt: 0 };
-  // const { rotation, direction } = antRotation;
   switch (rotation) {
     case 90:
       value.xAnt++;
@@ -58,17 +53,16 @@ export const changeAntState = (
       value.yAnt++;
       break;
   }
-  if (direction) {
+  if (cell) {
     value.xAnt = -value.xAnt;
     value.yAnt = -value.yAnt;
   }
   return value;
 };
 
-export const newRotation = (rotation: number, direction: boolean): number => {
-  // const { rotation, direction } = antRotation;
+export const newRotation = (rotation: number, cell: Cell): number => {
   let newRotation = rotation + 90;
-  if (direction) {
+  if (cell) {
     newRotation += 180;
   }
   if (newRotation >= 360) {
