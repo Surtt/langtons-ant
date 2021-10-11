@@ -17,7 +17,7 @@ export interface BoardProps {
 
 export const Board: FC<BoardProps> = ({ cells, ant }) => {
   return (
-    <BoardTable>
+    <BoardTable role="grid">
       <tbody>
         {cells.map((line, index) => (
           <Line key={`line_${index}`} line={line} index={index} ant={ant} />

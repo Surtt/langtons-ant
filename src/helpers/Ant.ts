@@ -13,7 +13,7 @@ export type Ant = {
   rotation: number;
 };
 
-const generateNumber: RandomGenerator = (min, max) => {
+export const generateNumber: RandomGenerator = (min, max) => {
   return Math.floor(Math.random() * (max - min)) + min;
 };
 
@@ -33,7 +33,7 @@ export const generateAntPosition: RandomGenerator<Ant> = (
 
 export const changeAntState = (
   rotation: number,
-  cell: Cell,
+  cell: Cell
 ): {
   xAnt: number;
   yAnt: number;

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
-import { Cell as CellType } from '../../helpers/Field'
+import { Cell as CellType } from '../../helpers/Field';
 import { Ant } from '@/helpers/Ant';
 import img from './ant.png';
 
@@ -14,7 +14,7 @@ export interface CellProps {
 
 export const Cell: FC<CellProps> = ({ ant, cell }) => {
   return (
-    <CellTd>
+    <CellTd role="cell">
       <Box>
         {ant ? <AntCell /> : <EmptyCell />}
         {cell ? <FilledCell /> : <EmptyCell />}
@@ -31,7 +31,7 @@ const Box = styled.div`
   position: relative;
   width: 100%;
   &:before {
-    content: "";
+    content: '';
     display: block;
     padding-top: 100%;
   }

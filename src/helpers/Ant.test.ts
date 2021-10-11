@@ -1,4 +1,31 @@
-import { changeAntState, newRotation } from './Ant';
+import {
+  generateNumber,
+  generateAntPosition,
+  changeAntState,
+  newRotation,
+} from './Ant';
+
+describe('Check generating random coords', () => {
+  it('Coords are less than 5', () => {
+    expect(generateNumber(4, 4)).toBeGreaterThanOrEqual(2);
+  });
+  it('Coords are at least 5', () => {
+    expect(generateNumber(4, 4)).toBeLessThan(5);
+  });
+});
+
+describe('Check ant position', () => {
+  it('Coords are less than 5', () => {
+    expect(generateAntPosition(1, 1, 90)).toStrictEqual({
+      xAnt: 1,
+      yAnt: 1,
+      rotation: 90,
+    });
+  });
+  it('Coords are at least 5', () => {
+    expect(generateNumber(4, 4)).toBeLessThan(5);
+  });
+});
 
 describe('Changing ant state', () => {
   it('Check rotation and ant position with false', () => {

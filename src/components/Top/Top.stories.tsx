@@ -1,14 +1,14 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
-import { AppTitle, AppTitleProps } from './AppTitle';
+import { Top, TopProps } from './Top';
 
 export default {
-  title: 'Top/AppTitle',
-  component: AppTitle,
+  title: 'Top/Top',
+  component: Top,
 } as Meta;
 
-const Template: Story<AppTitleProps> = (args) => <AppTitle {...args} />;
+const Template: Story<TopProps> = (args) => <Top {...args} />;
 
 export const AntAppTitle = Template.bind({});
 AntAppTitle.args = {

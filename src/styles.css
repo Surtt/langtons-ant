@@ -135,7 +135,7 @@ img{
   fill: var(--text-color);
 }
 
-.ant {
+/* .ant {
   background: url("./img/ant.png") no-repeat;
   background-size: contain;
   background-position: center;
@@ -191,4 +191,4 @@ img{
   background-position: center;
   transform: rotate(270deg);
   background-color: grey;
-}
+} */

@@ -4,22 +4,34 @@ import { Board } from './components/Board/Board';
 import { generateField } from '@/helpers/Field';
 import { generateAntPosition } from '@/helpers/Ant';
 import { Controls } from './components/Controls/Controls';
-import { AppTitle } from './components/Top/AppTitle';
+import { Top } from './components/Top/Top';
 import { Field } from './helpers/Field';
 import { Ant } from './helpers/Ant';
+import { startGeneration } from './helpers/startGeneration';
 
 const App: FC = () => {
   const basicSize = 10;
   const defaultCellState = false;
   const [ant, setAnt] = useState<Ant>({ xAnt: 0, yAnt: 0, rotation: 0 });
-  const [cells, setCells] = useState<Field>([])
+  const [cells, setCells] = useState<Field>([]);
   useEffect(() => {
     setCells(generateField(basicSize, defaultCellState));
     setAnt(generateAntPosition(0, basicSize));
-  }, []);
+  }, [defaultCellState]);
+  console.log(
+    startGeneration(
+      generateField(basicSize, defaultCellState),
+      {
+        xAnt: 0,
+        yAnt: 0,
+        rotation: 0,
+      },
+      0
+    )
+  );
   return (
     <div style={{ margin: '0 auto ' }}>
-      <AppTitle>Langton's Ant</AppTitle>
+      <Top>Langton's Ant</Top>
       <StretchWrap>
         <Controls />
         <Board cells={cells} ant={ant} />

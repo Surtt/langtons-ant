@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Line 1`] = `
+<DocumentFragment>
+  <div
+    class="css-1h0vbn9"
+  >
+    <div
+      class="css-10u676d"
+    />
+    <div
+      class="css-bdbrua"
+    />
+  </div>
+  <div
+    class="css-1h0vbn9"
+  >
+    <div
+      class="css-bdbrua"
+    />
+    <div
+      class="css-bdbrua"
+    />
+  </div>
+  <div
+    class="css-1h0vbn9"
+  >
+    <div
+      class="css-bdbrua"
+    />
+    <div
+      class="css-bdbrua"
+    />
+  </div>
+  <div
+    class="css-1h0vbn9"
+  >
+    <div
+      class="css-bdbrua"
+    />
+    <div
+      class="css-bdbrua"
+    />
+  </div>
+  <div
+    class="css-1h0vbn9"
+  >
+    <div
+      class="css-bdbrua"
+    />
+    <div
+      class="css-bdbrua"
+    />
+  </div>
+</DocumentFragment>
+`;
