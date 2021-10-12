@@ -8,18 +8,19 @@ export default {
   title: 'Board/Cell',
   component: Cell,
   decorators: [
-    (Story) => <BoardTable style={{ width: '2vw', height: '2vw' }}>
-      <tr>
-        <Story />
-      </tr>
-    </BoardTable>
-  ]
+    (Story) => (
+      <BoardTable style={{ width: '2vw', height: '2vw' }}>
+        <tr>
+          <Story />
+        </tr>
+      </BoardTable>
+    ),
+  ],
 } as Meta;
 
 const Template: Story<CellProps> = (args) => <Cell {...args} />;
 
 export const CellWhite = Template.bind({});
 CellWhite.args = {
-  cell: false
+  cell: false,
 };
-

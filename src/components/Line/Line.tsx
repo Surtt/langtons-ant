@@ -24,6 +24,7 @@ export const Line: FC<LineProps> = ({ line, index, ant }) => {
     <tr role="line">
       {line.map((cell, idx) => (
         <Cell
+          cell={cell}
           key={`line_${index}-cell_${idx}`}
           ant={index === xAnt && idx === yAnt ? ant : undefined}
         />

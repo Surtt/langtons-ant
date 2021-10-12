@@ -8,7 +8,7 @@ export const generateField = (size: number, state: Cell): Field =>
     .fill(new Array<boolean>(size))
     .map(() => new Array<boolean>(size).fill(state));
 
-export const toggleCell = (field: Field, coords: Coords): Cell => {
+export const toggleCellOnTheField = (field: Field, coords: Coords): Cell => {
   const [x, y] = coords;
   return (field[x][y] = !field[x][y]);
 };

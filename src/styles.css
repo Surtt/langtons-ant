@@ -61,7 +61,7 @@ img{
 }
 
 #root {
-  padding: var(--padding-box);
+  /* padding: var(--padding-box); */
   min-width: 400px;
   margin: 0 auto;
 }
@@ -135,19 +135,19 @@ img{
   fill: var(--text-color);
 }
 
-/* .ant {
-  background: url("./img/ant.png") no-repeat;
+.ant {
+  background: url('./components/Cell/ant.png') no-repeat;
   background-size: contain;
   background-position: center;
 }
 
 .ant90 {
-  background: url("./img/ant.png") no-repeat;
+  background: url('./components/Cell/ant.png') no-repeat;
   background-size: contain;
   background-position: center;
   transform: rotate(90deg);
 }
-
+/* 
 .ant180 {
   background: url("./img/ant.png") no-repeat;
   background-size: contain;

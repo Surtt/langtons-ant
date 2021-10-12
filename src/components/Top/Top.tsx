@@ -9,11 +9,11 @@ export interface TopProps {
 }
 
 export const Top: FC<TopProps> = ({ children }) => {
-  return <AppTitle>{children}</AppTitle>
+  return <AppTitle>{children}</AppTitle>;
 };
 
 export const AppTitle = styled.h1`
-  margin-bottom: 2.5rem;
-  font-size: 2rem;
-  text-align: center;
+  color: #ffffff;
+  font-size: 1.5rem;
+  text-align: left;
 `;

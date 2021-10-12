@@ -8,6 +8,10 @@ exports[`Renders Line 1`] = `
     <div
       class="css-10u676d"
     />
+  </div>
+  <div
+    class="css-1h0vbn9"
+  >
     <div
       class="css-bdbrua"
     />
@@ -18,9 +22,6 @@ exports[`Renders Line 1`] = `
     <div
       class="css-bdbrua"
     />
-    <div
-      class="css-bdbrua"
-    />
   </div>
   <div
     class="css-1h0vbn9"
@@ -28,26 +29,10 @@ exports[`Renders Line 1`] = `
     <div
       class="css-bdbrua"
     />
-    <div
-      class="css-bdbrua"
-    />
   </div>
   <div
     class="css-1h0vbn9"
   >
-    <div
-      class="css-bdbrua"
-    />
-    <div
-      class="css-bdbrua"
-    />
-  </div>
-  <div
-    class="css-1h0vbn9"
-  >
-    <div
-      class="css-bdbrua"
-    />
     <div
       class="css-bdbrua"
     />

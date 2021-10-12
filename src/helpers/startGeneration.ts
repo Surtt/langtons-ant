@@ -1,5 +1,5 @@
 import { changeAntState, newRotation, Ant } from './Ant';
-import { Field, toggleCell } from './Field';
+import { Field, toggleCellOnTheField } from './Field';
 
 export interface initState {
   field: Field;
@@ -18,7 +18,8 @@ export const startGeneration = (
   const movement = changeAntState(rotation, field[xAnt][yAnt]);
   const updateRotation = newRotation(rotation, field[xAnt][yAnt]);
   // field[xAnt][yAnt] = !field[xAnt][yAnt];
-  toggleCell(field, [xAnt, yAnt]);
+  // field = toggleCellOnTheField(field, [xAnt, yAnt]);
+  toggleCellOnTheField(field, [xAnt, yAnt]);
   movement.xAnt += xAnt;
   movement.yAnt += yAnt;
   const newAnt = {

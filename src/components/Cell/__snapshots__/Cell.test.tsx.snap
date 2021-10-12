@@ -8,9 +8,6 @@ exports[`Renders Cell 1`] = `
     <div
       class="css-10u676d"
     />
-    <div
-      class="css-bdbrua"
-    />
   </div>
 </DocumentFragment>
 `;

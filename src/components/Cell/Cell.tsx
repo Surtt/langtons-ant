@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
-import { Cell as CellType } from '../../helpers/Field';
 import { Ant } from '@/helpers/Ant';
 import img from './ant.png';
 
@@ -8,17 +7,26 @@ export interface CellProps {
   /**
    * Cell data
    */
-  cell?: CellType;
+  cell?: boolean;
   ant?: Ant;
 }
 
 export const Cell: FC<CellProps> = ({ ant, cell }) => {
+  // console.log(cell);
+  // const color = cell ? 'alt' : '';
+  // const hasAnt = ant
+  //   ? ant.rotation !== 0
+  //     ? ` ant${ant.rotation}`
+  //     : ' ant'
+  //   : '';
+  // const styleAntOrNot = `content${hasAnt}${color}`;
   return (
     <CellTd role="cell">
-      <Box>
+      {/* <Box>
         {ant ? <AntCell /> : <EmptyCell />}
         {cell ? <FilledCell /> : <EmptyCell />}
-      </Box>
+      </Box> */}
+      <Box>{ant ? <AntCell /> : cell ? <FilledCell /> : <EmptyCell />}</Box>
     </CellTd>
   );
 };

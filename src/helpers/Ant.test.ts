@@ -16,10 +16,12 @@ describe('Check generating random coords', () => {
 
 describe('Check ant position', () => {
   it('Coords are less than 5', () => {
-    expect(generateAntPosition(1, 1, 90)).toStrictEqual({
-      xAnt: 1,
-      yAnt: 1,
-      rotation: 90,
+    [0, 90, 180, 270, 360].forEach((angle) => {
+      expect(generateAntPosition(1, 1, angle)).toStrictEqual({
+        xAnt: 1,
+        yAnt: 1,
+        rotation: angle,
+      });
     });
   });
   it('Coords are at least 5', () => {
