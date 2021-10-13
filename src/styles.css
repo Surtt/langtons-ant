@@ -135,6 +135,10 @@ img{
   fill: var(--text-color);
 }
 
+.orange {
+  background-color: orange;
+}
+
 .ant {
   background: url('./components/Cell/ant.png') no-repeat;
   background-size: contain;

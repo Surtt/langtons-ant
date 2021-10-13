@@ -18,7 +18,7 @@ exports[`Renders Board 1`] = `
             class="css-1h0vbn9"
           >
             <div
-              class="css-10u676d"
+              class="ant css-bdbrua"
             />
           </div>
         </td>
@@ -30,7 +30,7 @@ exports[`Renders Board 1`] = `
             class="css-1h0vbn9"
           >
             <div
-              class="css-bdbrua"
+              class=" css-bdbrua"
             />
           </div>
         </td>
@@ -42,7 +42,7 @@ exports[`Renders Board 1`] = `
             class="css-1h0vbn9"
           >
             <div
-              class="css-bdbrua"
+              class=" css-bdbrua"
             />
           </div>
         </td>
@@ -54,7 +54,7 @@ exports[`Renders Board 1`] = `
             class="css-1h0vbn9"
           >
             <div
-              class="css-bdbrua"
+              class=" css-bdbrua"
             />
           </div>
         </td>
@@ -66,71 +66,7 @@ exports[`Renders Board 1`] = `
             class="css-1h0vbn9"
           >
             <div
-              class="css-bdbrua"
-            />
-          </div>
-        </td>
-      </tr>
-      <tr
-        role="line"
-      >
-        <td
-          class="css-1dvq4hu"
-          role="cell"
-        >
-          <div
-            class="css-1h0vbn9"
-          >
-            <div
-              class="css-bdbrua"
-            />
-          </div>
-        </td>
-        <td
-          class="css-1dvq4hu"
-          role="cell"
-        >
-          <div
-            class="css-1h0vbn9"
-          >
-            <div
-              class="css-bdbrua"
-            />
-          </div>
-        </td>
-        <td
-          class="css-1dvq4hu"
-          role="cell"
-        >
-          <div
-            class="css-1h0vbn9"
-          >
-            <div
-              class="css-bdbrua"
-            />
-          </div>
-        </td>
-        <td
-          class="css-1dvq4hu"
-          role="cell"
-        >
-          <div
-            class="css-1h0vbn9"
-          >
-            <div
-              class="css-bdbrua"
-            />
-          </div>
-        </td>
-        <td
-          class="css-1dvq4hu"
-          role="cell"
-        >
-          <div
-            class="css-1h0vbn9"
-          >
-            <div
-              class="css-bdbrua"
+              class=" css-bdbrua"
             />
           </div>
         </td>
@@ -146,7 +82,7 @@ exports[`Renders Board 1`] = `
             class="css-1h0vbn9"
           >
             <div
-              class="css-bdbrua"
+              class=" css-bdbrua"
             />
           </div>
         </td>
@@ -158,7 +94,7 @@ exports[`Renders Board 1`] = `
             class="css-1h0vbn9"
           >
             <div
-              class="css-bdbrua"
+              class=" css-bdbrua"
             />
           </div>
         </td>
@@ -170,7 +106,7 @@ exports[`Renders Board 1`] = `
             class="css-1h0vbn9"
           >
             <div
-              class="css-bdbrua"
+              class=" css-bdbrua"
             />
           </div>
         </td>
@@ -182,7 +118,7 @@ exports[`Renders Board 1`] = `
             class="css-1h0vbn9"
           >
             <div
-              class="css-bdbrua"
+              class=" css-bdbrua"
             />
           </div>
         </td>
@@ -194,71 +130,7 @@ exports[`Renders Board 1`] = `
             class="css-1h0vbn9"
           >
             <div
-              class="css-bdbrua"
-            />
-          </div>
-        </td>
-      </tr>
-      <tr
-        role="line"
-      >
-        <td
-          class="css-1dvq4hu"
-          role="cell"
-        >
-          <div
-            class="css-1h0vbn9"
-          >
-            <div
-              class="css-bdbrua"
-            />
-          </div>
-        </td>
-        <td
-          class="css-1dvq4hu"
-          role="cell"
-        >
-          <div
-            class="css-1h0vbn9"
-          >
-            <div
-              class="css-bdbrua"
-            />
-          </div>
-        </td>
-        <td
-          class="css-1dvq4hu"
-          role="cell"
-        >
-          <div
-            class="css-1h0vbn9"
-          >
-            <div
-              class="css-bdbrua"
-            />
-          </div>
-        </td>
-        <td
-          class="css-1dvq4hu"
-          role="cell"
-        >
-          <div
-            class="css-1h0vbn9"
-          >
-            <div
-              class="css-bdbrua"
-            />
-          </div>
-        </td>
-        <td
-          class="css-1dvq4hu"
-          role="cell"
-        >
-          <div
-            class="css-1h0vbn9"
-          >
-            <div
-              class="css-bdbrua"
+              class=" css-bdbrua"
             />
           </div>
         </td>
@@ -274,7 +146,7 @@ exports[`Renders Board 1`] = `
             class="css-1h0vbn9"
           >
             <div
-              class="css-bdbrua"
+              class=" css-bdbrua"
             />
           </div>
         </td>
@@ -286,7 +158,7 @@ exports[`Renders Board 1`] = `
             class="css-1h0vbn9"
           >
             <div
-              class="css-bdbrua"
+              class=" css-bdbrua"
             />
           </div>
         </td>
@@ -298,7 +170,7 @@ exports[`Renders Board 1`] = `
             class="css-1h0vbn9"
           >
             <div
-              class="css-bdbrua"
+              class=" css-bdbrua"
             />
           </div>
         </td>
@@ -310,7 +182,7 @@ exports[`Renders Board 1`] = `
             class="css-1h0vbn9"
           >
             <div
-              class="css-bdbrua"
+              class=" css-bdbrua"
             />
           </div>
         </td>
@@ -322,7 +194,135 @@ exports[`Renders Board 1`] = `
             class="css-1h0vbn9"
           >
             <div
-              class="css-bdbrua"
+              class=" css-bdbrua"
+            />
+          </div>
+        </td>
+      </tr>
+      <tr
+        role="line"
+      >
+        <td
+          class="css-1dvq4hu"
+          role="cell"
+        >
+          <div
+            class="css-1h0vbn9"
+          >
+            <div
+              class=" css-bdbrua"
+            />
+          </div>
+        </td>
+        <td
+          class="css-1dvq4hu"
+          role="cell"
+        >
+          <div
+            class="css-1h0vbn9"
+          >
+            <div
+              class=" css-bdbrua"
+            />
+          </div>
+        </td>
+        <td
+          class="css-1dvq4hu"
+          role="cell"
+        >
+          <div
+            class="css-1h0vbn9"
+          >
+            <div
+              class=" css-bdbrua"
+            />
+          </div>
+        </td>
+        <td
+          class="css-1dvq4hu"
+          role="cell"
+        >
+          <div
+            class="css-1h0vbn9"
+          >
+            <div
+              class=" css-bdbrua"
+            />
+          </div>
+        </td>
+        <td
+          class="css-1dvq4hu"
+          role="cell"
+        >
+          <div
+            class="css-1h0vbn9"
+          >
+            <div
+              class=" css-bdbrua"
+            />
+          </div>
+        </td>
+      </tr>
+      <tr
+        role="line"
+      >
+        <td
+          class="css-1dvq4hu"
+          role="cell"
+        >
+          <div
+            class="css-1h0vbn9"
+          >
+            <div
+              class=" css-bdbrua"
+            />
+          </div>
+        </td>
+        <td
+          class="css-1dvq4hu"
+          role="cell"
+        >
+          <div
+            class="css-1h0vbn9"
+          >
+            <div
+              class=" css-bdbrua"
+            />
+          </div>
+        </td>
+        <td
+          class="css-1dvq4hu"
+          role="cell"
+        >
+          <div
+            class="css-1h0vbn9"
+          >
+            <div
+              class=" css-bdbrua"
+            />
+          </div>
+        </td>
+        <td
+          class="css-1dvq4hu"
+          role="cell"
+        >
+          <div
+            class="css-1h0vbn9"
+          >
+            <div
+              class=" css-bdbrua"
+            />
+          </div>
+        </td>
+        <td
+          class="css-1dvq4hu"
+          role="cell"
+        >
+          <div
+            class="css-1h0vbn9"
+          >
+            <div
+              class=" css-bdbrua"
             />
           </div>
         </td>

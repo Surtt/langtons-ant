@@ -20,7 +20,7 @@ export default {
 
 const Template: Story<CellProps> = (args) => <Cell {...args} />;
 
-export const CellWhite = Template.bind({});
-CellWhite.args = {
+export const CellExample = Template.bind({});
+CellExample.args = {
   cell: false,
 };

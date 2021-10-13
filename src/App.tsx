@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import styled from '@emotion/styled';
 
 import { generateField } from '@/helpers/Field';
@@ -8,10 +8,8 @@ import { Field } from '@/helpers/Field';
 import { Ant } from '@/helpers/Ant';
 import { startGeneration } from '@/helpers/startGeneration';
 
-import { Board } from '@/components/Board/Board';
-import { Controls } from '@/components/Controls/Controls';
-import { Top } from '@/components/Top/Top';
-import { About } from '@/components/About/About';
+import { Navigation } from './components/Navigation/Navigation';
+import { Routes } from './routes/Routes';
 
 const App: FC = () => {
   const basicSize = 10;
@@ -42,31 +40,10 @@ const App: FC = () => {
     <Router>
       <>
         <Header>
-          <nav>
-            <UlList>
-              <li>
-                <Link to="/">
-                  <Top>Langton's Ant</Top>
-                </Link>
-              </li>
-              <li>
-                <Link style={{ color: 'white' }} to="/about">
-                  About
-                </Link>
-              </li>
-            </UlList>
-          </nav>
+          <Navigation />
         </Header>
         <StretchWrap>
-          <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/">
-              <Controls />
-              <Board cells={cells} ant={antState} />
-            </Route>
-          </Switch>
+          <Routes cells={cells} ant={antState} />
         </StretchWrap>
       </>
     </Router>
@@ -87,10 +64,4 @@ export const StretchWrap = styled.div`
   width: 75vmin;
   height: 75vmin;
   margin: 0 auto;
-`;
-
-export const UlList = styled.ul`
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
 `;
