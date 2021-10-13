@@ -61,7 +61,10 @@ const CellContent = styled.div`
 //   background-color: orange;
 // `;
 
-const dynamicStyleAnt = ({ rotate }) =>
+interface RotateProps {
+  rotate: number;
+}
+const dynamicStyleAnt = ({ rotate }: RotateProps) =>
   css`
     background: url(${img}) no-repeat;
     background-size: contain;

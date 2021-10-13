@@ -18,7 +18,8 @@ exports[`Renders Board 1`] = `
             class="css-1h0vbn9"
           >
             <div
-              class="ant css-bdbrua"
+              class="css-fzp5ig"
+              rotate="0"
             />
           </div>
         </td>

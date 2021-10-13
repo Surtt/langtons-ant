@@ -14,16 +14,12 @@ import { Routes } from './routes/Routes';
 const App: FC = () => {
   const basicSize = 10;
   const defaultCellState = false;
-  const [antState, setAnt] = useState<Ant>({ xAnt: 0, yAnt: 0, rotation: 0 });
+  const [ant, setAnt] = useState<Ant>({ xAnt: 0, yAnt: 0, rotation: 0 });
   const [cells, setCells] = useState<Field>([]);
-  const { field, ant } = startGeneration(
-    generateField(basicSize, defaultCellState),
-    generateAntPosition(0, basicSize),
-    0
-  );
+
   useEffect(() => {
-    setCells(field);
-    setAnt(ant);
+    setCells(generateField(basicSize, defaultCellState));
+    setAnt(generateAntPosition(0, basicSize, 0));
   }, []);
   console.log(
     startGeneration(
@@ -43,7 +39,7 @@ const App: FC = () => {
           <Navigation />
         </Header>
         <StretchWrap>
-          <Routes cells={cells} ant={antState} />
+          <Routes cells={cells} ant={ant} />
         </StretchWrap>
       </>
     </Router>
