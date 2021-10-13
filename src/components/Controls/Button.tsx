@@ -24,15 +24,12 @@ export const Button: FC<ButtonProps> = ({ title, path }) => {
 
 const Btn = styled.button`
   display: flex;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   width: 35px;
   height: 35px;
   padding: 0;
   border: none;
   cursor: pointer;
-  &:hover {
-    
-  }
   &:last-child {
     margin-right: 0;
   }

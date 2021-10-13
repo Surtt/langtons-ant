@@ -57,17 +57,17 @@ const App: FC = () => {
             </UlList>
           </nav>
         </Header>
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/">
-            <StretchWrap>
+        <StretchWrap>
+          <Switch>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/">
               <Controls />
               <Board cells={cells} ant={antState} />
-            </StretchWrap>
-          </Route>
-        </Switch>
+            </Route>
+          </Switch>
+        </StretchWrap>
       </>
     </Router>
   );

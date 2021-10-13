@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Button } from './Button/Button';
+import { Button } from './Button';
 
 export const Play: FC = () => {
   return (
