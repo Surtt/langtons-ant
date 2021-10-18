@@ -21,7 +21,7 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'react', 'prettier'],
   rules: {
-    'prettier/prettier': ['error', { singleQuote: true }],
+    'prettier/prettier': ['error', { singleQuote: true, jsxSingleQuote: true }],
     'react/no-unescaped-entities': 0,
   },
   overrides: [

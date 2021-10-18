@@ -10,11 +10,12 @@ export interface ButtonProps {
    * Svg path
    */
   path: ReactChild;
+  onClick: () => void;
 }
 
-export const Button: FC<ButtonProps> = ({ title, path }) => {
+export const Button: FC<ButtonProps> = ({ title, path, onClick }) => {
   return (
-    <Btn title={title}>
+    <Btn title={title} onClick={onClick}>
       <Image xmlns="http://www.w3.org/2000/svg" viewBox="0 0 439.362 439.362">
         {path}
       </Image>

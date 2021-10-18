@@ -1,36 +1,22 @@
-import React, { FC, useEffect, useState } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React, { FC } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import styled from '@emotion/styled';
 
-import { generateField } from '@/helpers/Field';
-import { generateAntPosition } from '@/helpers/Ant';
 import { Field } from '@/helpers/Field';
 import { Ant } from '@/helpers/Ant';
-import { startGeneration } from '@/helpers/startGeneration';
+
+import { useSelector } from 'react-redux';
 
 import { Navigation } from './components/Navigation/Navigation';
 import { Routes } from './routes/Routes';
 
-const App: FC = () => {
-  const basicSize = 10;
-  const defaultCellState = false;
-  const [ant, setAnt] = useState<Ant>({ xAnt: 0, yAnt: 0, rotation: 0 });
-  const [cells, setCells] = useState<Field>([]);
+interface PlayProps {
+  play: { field: Field; ant: Ant; count: number };
+}
 
-  useEffect(() => {
-    setCells(generateField(basicSize, defaultCellState));
-    setAnt(generateAntPosition(0, basicSize, 0));
-  }, []);
-  console.log(
-    startGeneration(
-      generateField(basicSize, defaultCellState),
-      {
-        xAnt: 0,
-        yAnt: 0,
-        rotation: 0,
-      },
-      0
-    )
+const App: FC = () => {
+  const { field: cells, ant, count } = useSelector(
+    ({ play }: PlayProps) => play
   );
   return (
     <Router>

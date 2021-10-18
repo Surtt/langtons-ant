@@ -18,8 +18,9 @@ export const startGeneration = (
   const movement = changeAntState(rotation, field[xAnt][yAnt]);
   const updateRotation = newRotation(rotation, field[xAnt][yAnt]);
   // field[xAnt][yAnt] = !field[xAnt][yAnt];
-  // field = toggleCellOnTheField(field, [xAnt, yAnt]);
-  toggleCellOnTheField(field, [xAnt, yAnt]);
+  field = toggleCellOnTheField(field, [xAnt, yAnt]);
+  // toggleCellOnTheField(field, [xAnt, yAnt]);
+  // console.log(toggleCellOnTheField(field, [xAnt, yAnt]));
   movement.xAnt += xAnt;
   movement.yAnt += yAnt;
   const newAnt = {
@@ -29,7 +30,7 @@ export const startGeneration = (
   };
 
   return {
-    field,
+    field: [...field],
     ant: newAnt,
     count: cnt,
   };

@@ -4,12 +4,14 @@ import { Before } from './Before';
 import { Play } from './Play';
 import { Next } from './Next';
 import { Clear } from './Clear';
+import { Pause } from './Pause';
 
 export const Controls: FC = () => {
   return (
     <ControlsWrap>
       <Before />
       <Play />
+      <Pause />
       <Next />
       <Clear />
     </ControlsWrap>
