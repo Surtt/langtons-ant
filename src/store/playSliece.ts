@@ -18,27 +18,6 @@ const initialState: initState = {
   count: 0,
 };
 
-// let timerId: number | undefined;
-// export const intervalUpdate = createAsyncThunk(
-//   'play/updateState',
-//   (state, { dispatch, getState }) => {
-//     if (!timerId) {
-//       console.log(dispatch(state));
-//       timerId = window.setInterval(
-//         () => dispatch(played(getState().play)),
-//         1000
-//       );
-//       return state;
-//     }
-
-//     if (timerId) {
-//       clearInterval(timerId);
-//       timerId = undefined;
-//       return state;
-//     }
-//   }
-// );
-
 export const playSlice = createSlice({
   name: 'play',
   initialState,
@@ -47,7 +26,8 @@ export const playSlice = createSlice({
       console.log(action);
       const { field, ant, count } = action.payload;
       const newField = cloneDeep(field);
-      const final = startGeneration(newField, ant, count);
+      const newAnt = cloneDeep(ant);
+      const final = startGeneration(newField, newAnt, count);
       return { ...state, ...final };
     },
     paused: (state, action: PayloadAction<initState>) => {
@@ -62,25 +42,15 @@ export const playSlice = createSlice({
       console.log(action);
       const { field, ant, count } = action.payload;
       const newField = cloneDeep(field);
-      const nextStep = startGeneration(newField, ant, count);
+      const newAnt = cloneDeep(ant);
+      const nextStep = startGeneration(newField, newAnt, count);
       return { ...state, ...nextStep };
     },
     doneBefore: (state, action: PayloadAction<initState>) => {
       console.log(action);
-      // const { field, ant, count } = action.payload;
-      // const newField = cloneDeep(field);
-      // const beforeStep = startGeneration(newField, ant, count);
       return { ...state, ...action.payload };
-      // return { ...state, ...action.payload };
     },
   },
-  // extraReducers: (builder) => {
-  //   builder.addCase(intervalUpdate.fulfilled, (state, action) => {
-  //     console.log(action.payload);
-  //     // console.log(state);
-  //     state = action.payload;
-  //   });
-  // },
 });
 
 export const {

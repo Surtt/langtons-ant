@@ -1,25 +1,20 @@
-import React, { FC, useEffect, useRef } from 'react';
+import React, { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/store';
 import { doneBefore } from '@/store/playSliece';
 import { Button } from './Button';
+import { usePrevState } from '../hooks/usePrevState';
+import { initState } from '@/helpers/startGeneration';
 
-function usePrevious<T>(value: T): T | undefined {
-  const ref = useRef<T>();
-  useEffect(() => {
-    ref.current = value;
-  });
-  return ref.current;
+interface BeforeProps {
+  initialState: initState;
 }
 
-export const Before: FC = () => {
+export const Before: FC<BeforeProps> = () => {
   const state = useSelector((state: RootState) => state);
   const dispatch = useDispatch();
-  // useEffect(() => {
-  //   console.log(usePrevious(state));
-  // }, [state]);
   console.log(state.play, 'current');
-  const prevState = usePrevious(state.play);
+  const prevState = usePrevState(state.play);
   console.log(prevState, 'prev');
   return (
     <Button
