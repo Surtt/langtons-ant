@@ -22,7 +22,7 @@ const App: FC = () => {
     <Router>
       <>
         <Header>
-          <Navigation />
+          <Navigation count={count} />
         </Header>
         <StretchWrap>
           <Routes cells={cells} ant={ant} />

@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { Middleware } from 'redux';
-import playReducer, { cleared, doneNext, paused, played } from './playSliece';
+import playReducer, { played } from './playSliece';
 
 // export const logger = (store) => (next) => (action) => {
 //   console.log('dispatching', action);
@@ -15,22 +15,28 @@ export const playMiddleware: Middleware = (store) => (next) => (
   action
 ): void => {
   if (action.type === 'play/played') {
+    const speed = store.getState().play.speed;
+    console.log(speed);
     clearInterval(timerId);
     timerId = window.setInterval(
       () => next(played(store.getState().play)),
-      1000
+      speed
     );
   } else if (action.type === 'play/paused') {
-    next(paused(store.getState().play));
     clearInterval(timerId);
+    next(action);
   } else if (action.type === 'play/cleared') {
     clearInterval(timerId);
-    next(cleared(store.getState().play));
+    next(action);
   } else if (action.type === 'play/doneNext') {
+    console.log(action);
     clearInterval(timerId);
-    next(doneNext(store.getState().play));
+    next(action);
   } else if (action.type === 'play/doneBefore') {
     clearInterval(timerId);
+    next(action);
+  } else if (action.type === 'play/changedSpeed') {
+    console.log(action);
     next(action);
   }
 };

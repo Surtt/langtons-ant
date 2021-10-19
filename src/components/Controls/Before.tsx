@@ -13,9 +13,9 @@ interface BeforeProps {
 export const Before: FC<BeforeProps> = () => {
   const state = useSelector((state: RootState) => state);
   const dispatch = useDispatch();
-  console.log(state.play, 'current');
+  // console.log(state.play, 'current');
   const prevState = usePrevState(state.play);
-  console.log(prevState, 'prev');
+  // console.log(prevState, 'prev');
   return (
     <Button
       title={'before'}

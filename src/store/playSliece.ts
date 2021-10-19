@@ -16,6 +16,7 @@ const initialState: initState = {
   field: generateField(basicSize, defaultCellState),
   ant: generateAntPosition(0, basicSize, 0),
   count: 0,
+  speed: 100,
 };
 
 export const playSlice = createSlice({
@@ -23,32 +24,65 @@ export const playSlice = createSlice({
   initialState,
   reducers: {
     played: (state, action: PayloadAction<initState>) => {
-      console.log(action);
-      const { field, ant, count } = action.payload;
+      // console.log(action);
+      const { field, ant, count, speed } = action.payload;
       const newField = cloneDeep(field);
       const newAnt = cloneDeep(ant);
       const final = startGeneration(newField, newAnt, count);
-      return { ...state, ...final };
+      state.field = final.field;
+      state.ant = final.ant;
+      state.count = final.count;
+      state.speed = speed;
+      // console.log(current(state));
     },
     paused: (state, action: PayloadAction<initState>) => {
-      console.log(action);
-      return state;
+      console.log(action.payload);
+      const { field, ant, count, speed } = action.payload;
+      state.field = field;
+      state.ant = ant;
+      state.count = count;
+      state.speed = speed;
+      console.log(current(state));
     },
     cleared: (state, action: PayloadAction<initState>) => {
       console.log(action);
-      return { ...state, ...initialState };
+      console.log(current(state));
+      state.field = initialState.field;
+      state.ant = initialState.ant;
+      state.count = initialState.count;
+      state.speed = initialState.speed;
+      console.log(current(state));
     },
     doneNext: (state, action: PayloadAction<initState>) => {
       console.log(action);
-      const { field, ant, count } = action.payload;
+      const { field, ant, count, speed } = action.payload;
       const newField = cloneDeep(field);
       const newAnt = cloneDeep(ant);
       const nextStep = startGeneration(newField, newAnt, count);
-      return { ...state, ...nextStep };
+      // return { ...state, ...nextStep };
+      state.field = nextStep.field;
+      state.ant = nextStep.ant;
+      state.count = nextStep.count;
+      state.speed = speed;
+      console.log(current(state));
     },
     doneBefore: (state, action: PayloadAction<initState>) => {
       console.log(action);
-      return { ...state, ...action.payload };
+      const { field, ant, count, speed } = action.payload;
+      state.field = field;
+      state.ant = ant;
+      state.count = count;
+      state.speed = speed;
+      console.log(current(state));
+    },
+    changedSpeed: (state, action: PayloadAction<initState>) => {
+      console.log(action.payload);
+      const { field, ant, count, speed } = action.payload;
+      state.field = field;
+      state.ant = ant;
+      state.count = count;
+      state.speed = speed;
+      console.log(current(state));
     },
   },
 });
@@ -59,5 +93,6 @@ export const {
   cleared,
   doneNext,
   doneBefore,
+  changedSpeed,
 } = playSlice.actions;
 export default playSlice.reducer;
