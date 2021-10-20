@@ -9,15 +9,10 @@ import { useSelector } from 'react-redux';
 
 import { Navigation } from './components/Navigation/Navigation';
 import { Routes } from './routes/Routes';
-
-interface PlayProps {
-  play: { field: Field; ant: Ant; count: number };
-}
+import { RootState } from './store';
 
 const App: FC = () => {
-  const { field: cells, ant, count } = useSelector(
-    ({ play }: PlayProps) => play
-  );
+  const { field: cells, ant, count } = useSelector((state: RootState) => state);
   return (
     <Router>
       <>

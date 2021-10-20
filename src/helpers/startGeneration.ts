@@ -1,7 +1,6 @@
 import { changeAntState, newRotation, Ant } from './Ant';
 import { Field, toggleCellOnTheField } from './Field';
-
-export interface initState {
+export interface GeneratingValues {
   field: Field;
   ant: Ant;
   count: number;
@@ -22,7 +21,7 @@ export const startGeneration = (
   field: Field,
   ant: Ant,
   count: number
-): initState => {
+): GeneratingValues => {
   const cnt = count + 1;
   const { xAnt, yAnt, rotation } = ant;
 

@@ -1,5 +1,5 @@
 import { RootState } from '@/store';
-import { played } from '@/store/playSliece';
+import { played } from '@/slices/playSliece';
 import React, { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button } from './Button';
@@ -11,7 +11,7 @@ export const Play: FC = () => {
     <Button
       title={'play'}
       path={<path d='m35.353 0 424.236 247.471-424.236 247.471z' />}
-      onClick={() => dispatch(played(state.play))}
+      onClick={() => dispatch(played(state))}
     />
   );
 };

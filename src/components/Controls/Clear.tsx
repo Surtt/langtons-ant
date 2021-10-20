@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { cleared } from '@/store/playSliece';
+import { cleared } from '@/slices/playSliece';
 import { Button } from './Button';
 import { RootState } from '@/store';
 
@@ -10,7 +10,7 @@ export const Clear: FC = () => {
   return (
     <Button
       title={'clear'}
-      onClick={() => dispatch(cleared(state.play))}
+      onClick={() => dispatch(cleared(state))}
       path={
         <>
           <path

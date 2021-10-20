@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/store';
-import { doneBefore } from '@/store/playSliece';
+import { doneBefore } from '@/slices/playSliece';
 import { Button } from './Button';
 import { usePrevState } from '../hooks/usePrevState';
-import { initState } from '@/helpers/startGeneration';
+import { initState } from '@/slices/playSliece';
 
 interface BeforeProps {
   initialState: initState;
@@ -13,9 +13,7 @@ interface BeforeProps {
 export const Before: FC<BeforeProps> = () => {
   const state = useSelector((state: RootState) => state);
   const dispatch = useDispatch();
-  // console.log(state.play, 'current');
-  const prevState = usePrevState(state.play);
-  // console.log(prevState, 'prev');
+  const prevState = usePrevState(state);
   return (
     <Button
       title={'before'}

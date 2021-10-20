@@ -7,20 +7,32 @@ import { Clear } from './Clear';
 import { Pause } from './Pause';
 import { Slider } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
-import { changedSpeed } from '@/store/playSliece';
+import { changedSpeed, initState } from '@/slices/playSliece';
 import cloneDeep from 'lodash/clonedeep';
+import { AppDispatch, RootState } from '@/store';
 
-const handleSpeedChange = (e, value, state, dispatch) => {
+export interface ControlsProps {
+  e: Event;
+  value: number;
+  state: initState;
+  dispatch: AppDispatch;
+}
+
+const handleSpeedChange = (
+  e: Event,
+  value: number,
+  state: initState,
+  dispatch: AppDispatch
+) => {
   const newState = cloneDeep(state);
   newState.speed = value;
-  console.log(newState);
   dispatch(changedSpeed(newState));
 };
 
-export const Controls: FC = () => {
-  const state = useSelector((state) => state);
+export const Controls: FC<ControlsProps> = () => {
+  const state = useSelector((state: RootState) => state);
   const dispatch = useDispatch();
-  const { speed } = state.play;
+  const { speed } = state;
   return (
     <>
       <ControlsWrap>
@@ -35,11 +47,9 @@ export const Controls: FC = () => {
         min={0.1}
         max={100}
         step={0.1}
-        aria-label='slider'
+        aria-label='small'
         valueLabelDisplay='auto'
-        onChange={(e, value) =>
-          handleSpeedChange(e, value, state.play, dispatch)
-        }
+        onChange={(e, value) => handleSpeedChange(e, value, state, dispatch)}
       />
     </>
   );
