@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/store';
-import { doneNext } from '@/slices/playSliece';
+import { actions } from '@/slices/playSliece';
 import { Button } from './Button';
 
 export const Next: FC = () => {
@@ -21,7 +21,7 @@ export const Next: FC = () => {
             C365.854,13.73,364.037,9.45,360.427,5.833z'
         />
       }
-      onClick={() => dispatch(doneNext(state))}
+      onClick={() => dispatch(actions.doneNext())}
     />
   );
 };

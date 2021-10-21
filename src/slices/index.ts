@@ -1,5 +1,5 @@
-import { rootReducer } from './playSliece';
+// import { rootReducer } from './playSliece';
 
-export default {
-  rootReducer,
-};
+// export default {
+//   rootReducer,
+// };

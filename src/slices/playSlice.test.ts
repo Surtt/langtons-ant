@@ -1,7 +1,6 @@
 import { Action } from 'redux';
 import {
   InitState,
-  initialState,
   rootReducer,
   played,
   paused,
@@ -85,7 +84,7 @@ describe('reducer', () => {
       count: 1,
       speed: 100,
     };
-    const nextState = rootReducer(prevState, played(prevState));
+    const nextState = rootReducer(prevState, played());
     expect(nextState).toEqual(expectedState);
   });
 
@@ -135,21 +134,11 @@ describe('reducer', () => {
       count: 1,
       speed: 100,
     };
-    const nextState = rootReducer(prevState, doneNext(prevState));
+    const nextState = rootReducer(prevState, doneNext());
     expect(nextState).toEqual(expectedState);
   });
 
   test('must be doneBefore', () => {
-    // const prevState = {
-    //   field: [
-    //     [false, false, false],
-    //     [false, false, false],
-    //     [false, false, false],
-    //   ],
-    //   ant: { xAnt: 1, yAnt: 1, rotation: 0 },
-    //   count: 0,
-    //   speed: 100,
-    // };
     const expectedState: InitState = {
       field: [
         [false, false, false],
@@ -165,16 +154,6 @@ describe('reducer', () => {
   });
 
   test('must be changedSpeed', () => {
-    const prevState = {
-      field: [
-        [false, false, false],
-        [false, false, false],
-        [false, false, false],
-      ],
-      ant: { xAnt: 1, yAnt: 1, rotation: 0 },
-      count: 0,
-      speed: 100,
-    };
     const expectedState: InitState = {
       field: [
         [false, false, false],
@@ -188,29 +167,29 @@ describe('reducer', () => {
     const nextState = rootReducer(prevState, changedSpeed(60));
     expect(nextState).toEqual(expectedState);
   });
-  // test('must be cleared', () => {
-  //   const prevState = {
-  //     field: [
-  //       [false, false, false],
-  //       [false, false, false],
-  //       [false, false, false],
-  //     ],
-  //     ant: { xAnt: 1, yAnt: 1, rotation: 0 },
-  //     count: 0,
-  //     speed: 100,
-  //   };
+  test('must be cleared', () => {
+    const prevState = {
+      field: [
+        [false, false, false],
+        [false, true, false],
+        [false, false, false],
+      ],
+      ant: { xAnt: 1, yAnt: 2, rotation: 90 },
+      count: 0,
+      speed: 60,
+    };
 
-  //   const expectedState: InitState = {
-  //     field: [
-  //       [false, false, false],
-  //       [false, false, false],
-  //       [false, false, false],
-  //     ],
-  //     ant: { xAnt: 1, yAnt: 1, rotation: 0 },
-  //     count: 0,
-  //     speed: 100,
-  //   };
-  //   const nextState = rootReducer(prevState, cleared());
-  //   expect(nextState).toEqual(expectedState);
-  // });
+    const expectedState: InitState = {
+      field: [
+        [false, false, false],
+        [false, false, false],
+        [false, false, false],
+      ],
+      ant: { xAnt: 1, yAnt: 1, rotation: 0 },
+      count: 0,
+      speed: 100,
+    };
+    const nextState = rootReducer(prevState, cleared());
+    expect(nextState).toEqual(expectedState);
+  });
 });

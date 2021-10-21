@@ -1,9 +1,15 @@
-import { createSlice, current, PayloadAction } from '@reduxjs/toolkit';
+import {
+  AnyAction,
+  createSlice,
+  current,
+  PayloadAction,
+  ThunkAction,
+} from '@reduxjs/toolkit';
 import { startGeneration } from '@/helpers/startGeneration';
 import { Field, generateField } from '@/helpers/Field';
 import { Ant } from '@/helpers/Ant';
 import { generateAntPosition } from '@/helpers/Ant';
-import cloneDeep from 'lodash/clonedeep';
+import { RootState } from '@/store';
 
 const basicSize = 11;
 const defaultCellState = false;
@@ -13,60 +19,68 @@ export interface InitState {
   ant: Ant;
   count: number;
   speed: number;
+  isPlayed: boolean;
 }
 
-export const initialState: InitState = {
-  field: generateField(basicSize, defaultCellState),
-  ant: generateAntPosition(0, basicSize, 0),
-  count: 0,
-  speed: 100,
+// export const initialState: InitState = {
+//   field: generateField(basicSize, defaultCellState),
+//   ant: generateAntPosition(0, basicSize, 0),
+//   count: 0,
+//   speed: 100,
+// };
+
+export const getInitialState = (): InitState => {
+  return {
+    field: generateField(basicSize, defaultCellState),
+    ant: generateAntPosition(0, basicSize, 0),
+    count: 0,
+    speed: 100,
+    isPlayed: false,
+  };
 };
 
-export const playSlice = createSlice({
+export const { reducer, actions } = createSlice({
   name: 'play',
-  initialState,
+  initialState: getInitialState(),
   reducers: {
     played: (state) => {
-      const { field, ant, count } = state;
-      // const newField = cloneDeep(field);
-      // const newAnt = cloneDeep(ant);
+      const { field, ant, count, speed } = state;
       const final = startGeneration(field, ant, count);
+      state.isPlayed = true;
       state.field = final.field;
       state.ant = final.ant;
       state.count = final.count;
-      // console.log(current(state));
+      state.speed = speed;
     },
-    paused: (state, action: PayloadAction<InitState>) => {
-      const { field, ant, count } = action.payload;
+    paused: (state) => {
+      const { field, ant, count } = state;
+      state.isPlayed = false;
       state.field = field;
       state.ant = ant;
       state.count = count;
-      console.log(current(state));
     },
     cleared: (state) => {
       console.log(current(state));
-      state.field = initialState.field;
-      state.ant = initialState.ant;
-      state.count = initialState.count;
-      state.speed = initialState.speed;
-      console.log(current(state));
+      const { field, ant, count, speed } = state;
+      state.field = getInitialState().field;
+      state.ant = getInitialState().ant;
+      state.count = getInitialState().count;
+      state.speed = getInitialState().speed;
+      state.isPlayed = getInitialState().isPlayed;
+      // console.log(current(state));
     },
-    doneNext: (state, action: PayloadAction<InitState>) => {
-      const { field, ant, count } = action.payload;
-      const newField = cloneDeep(field);
-      // const newAnt = cloneDeep(ant);
-      const nextStep = startGeneration(newField, ant, count);
+    doneNext: (state) => {
+      const { field, ant, count } = state;
+      const nextStep = startGeneration(field, ant, count);
       state.field = nextStep.field;
       state.ant = nextStep.ant;
       state.count = nextStep.count;
-      console.log(current(state));
     },
     doneBefore: (state, action: PayloadAction<InitState>) => {
       const { field, ant, count } = action.payload;
       state.field = field;
       state.ant = ant;
       state.count = count;
-      console.log(current(state));
     },
     changedSpeed: (state, action: PayloadAction<number>) => {
       state.speed = action.payload;
@@ -75,12 +89,17 @@ export const playSlice = createSlice({
   },
 });
 
-export const {
-  played,
-  paused,
-  cleared,
-  doneNext,
-  doneBefore,
-  changedSpeed,
-} = playSlice.actions;
-export const rootReducer = playSlice.reducer;
+export const recursiveGenerating = (): ThunkAction<
+  void,
+  RootState,
+  unknown,
+  AnyAction
+> => (dispatch, getState) =>
+  setTimeout(() => {
+    const { isPlayed } = getState();
+    if (isPlayed) {
+      dispatch(actions.played());
+      dispatch(actions.changedSpeed(getState().speed));
+      dispatch(recursiveGenerating());
+    }
+  }, getState().speed);

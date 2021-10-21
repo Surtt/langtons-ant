@@ -7,23 +7,18 @@ import { Clear } from './Clear';
 import { Pause } from './Pause';
 import { Slider } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
-import { changedSpeed, InitState } from '@/slices/playSliece';
-import cloneDeep from 'lodash/clonedeep';
+import { actions } from '@/slices/playSliece';
 import { AppDispatch, RootState } from '@/store';
 
-const handleSpeedChange = (
-  e: Event,
-  value: number,
-  state: InitState,
-  dispatch: AppDispatch
-) => {
-  dispatch(changedSpeed(value));
+const handleSpeedChange = (e: Event, value: number, dispatch: AppDispatch) => {
+  dispatch(actions.changedSpeed(value));
 };
 
 export const Controls: FC = () => {
   const state = useSelector((state: RootState) => state);
   const dispatch = useDispatch();
   const { speed } = state;
+  console.log(speed);
   return (
     <>
       <ControlsWrap>
@@ -40,9 +35,7 @@ export const Controls: FC = () => {
         step={0.1}
         aria-label='small'
         valueLabelDisplay='auto'
-        onChange={(e, value) =>
-          handleSpeedChange(e, value as number, state, dispatch)
-        }
+        onChange={(e, value) => handleSpeedChange(e, value as number, dispatch)}
       />
     </>
   );
