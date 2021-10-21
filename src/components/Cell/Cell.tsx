@@ -9,21 +9,16 @@ export interface CellProps {
    * Cell data
    */
   cell?: boolean;
+  /**
+   * Ant data
+   */
   ant?: Ant;
 }
 
 export const Cell: FC<CellProps> = ({ ant, cell }) => {
-  // console.log(cell);
   const isColored = cell ? 'orange' : '';
-  // const hasAnt = ant ? (ant.rotation !== 0 ? `ant${ant.rotation}` : 'ant') : '';
-  // const styleAntOrNot = `${hasAnt}${isColored}`;
   return (
-    <CellTd role="cell">
-      {/* <Box>
-        {ant ? <AntCell /> : <EmptyCell />}
-        {cell ? <FilledCell /> : <EmptyCell />}
-      </Box> */}
-      {/* <Box>{ant ? <AntCell /> : cell ? <FilledCell /> : <EmptyCell />}</Box> */}
+    <CellTd role='cell'>
       <Box>
         {ant ? (
           <AntCell rotate={ant.rotation} />

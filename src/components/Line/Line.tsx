@@ -21,7 +21,7 @@ export interface LineProps {
 export const Line: FC<LineProps> = ({ line, index, ant }) => {
   const { xAnt, yAnt } = ant;
   return (
-    <tr role="line">
+    <tr role='line'>
       {line.map((cell, idx) => (
         <Cell
           cell={cell}

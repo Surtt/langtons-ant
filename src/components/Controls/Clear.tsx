@@ -2,15 +2,15 @@ import React, { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { cleared } from '@/slices/playSliece';
 import { Button } from './Button';
-import { RootState } from '@/store';
 
 export const Clear: FC = () => {
-  const state = useSelector((state: RootState) => state);
+  const state = useSelector((state) => state);
   const dispatch = useDispatch();
   return (
     <Button
+      role={'clear'}
       title={'clear'}
-      onClick={() => dispatch(cleared(state))}
+      onClick={() => dispatch(cleared())}
       path={
         <>
           <path

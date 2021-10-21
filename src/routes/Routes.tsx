@@ -14,10 +14,10 @@ interface RoutesProps {
 export const Routes: FC<RoutesProps> = ({ cells, ant }) => {
   return (
     <Switch>
-      <Route path="/about">
+      <Route path='/about'>
         <About />
       </Route>
-      <Route path="/">
+      <Route path='/'>
         <Controls />
         <Board cells={cells} ant={ant} />
       </Route>

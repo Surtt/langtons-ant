@@ -9,6 +9,7 @@ export const Next: FC = () => {
   const dispatch = useDispatch();
   return (
     <Button
+      role={'next'}
       title={'next'}
       path={
         <path

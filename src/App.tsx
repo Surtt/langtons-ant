@@ -2,9 +2,6 @@ import React, { FC } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import styled from '@emotion/styled';
 
-import { Field } from '@/helpers/Field';
-import { Ant } from '@/helpers/Ant';
-
 import { useSelector } from 'react-redux';
 
 import { Navigation } from './components/Navigation/Navigation';

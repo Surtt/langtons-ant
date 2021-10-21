@@ -3,6 +3,10 @@ import styled from '@emotion/styled';
 
 export interface ButtonProps {
   /**
+   * Button role
+   */
+  role: string;
+  /**
    * Button title
    */
   title: string;
@@ -13,10 +17,10 @@ export interface ButtonProps {
   onClick: () => void;
 }
 
-export const Button: FC<ButtonProps> = ({ title, path, onClick }) => {
+export const Button: FC<ButtonProps> = ({ role, title, path, onClick }) => {
   return (
-    <Btn title={title} onClick={onClick}>
-      <Image xmlns="http://www.w3.org/2000/svg" viewBox="0 0 439.362 439.362">
+    <Btn role={role} title={title} onClick={onClick}>
+      <Image xmlns='http://www.w3.org/2000/svg' viewBox='0 0 439.362 439.362'>
         {path}
       </Image>
     </Btn>

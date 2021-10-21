@@ -12,11 +12,23 @@ const ant = {
 };
 
 it('Renders Line', () => {
-  const { asFragment } = render(<Line line={line} index={index} ant={ant} />);
+  const { asFragment } = render(
+    <table>
+      <tbody>
+        <Line line={line} index={index} ant={ant} />
+      </tbody>
+    </table>
+  );
   expect(asFragment()).toMatchSnapshot();
 });
 
 it('renders Line role', () => {
-  render(<Line line={line} index={index} ant={ant} />);
+  render(
+    <table>
+      <tbody>
+        <Line line={line} index={index} ant={ant} />
+      </tbody>
+    </table>
+  );
   expect(screen.getByRole('line')).toBeInTheDocument();
 });

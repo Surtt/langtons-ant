@@ -8,14 +8,14 @@ import cloneDeep from 'lodash/clonedeep';
 const basicSize = 11;
 const defaultCellState = false;
 
-export interface initState {
+export interface InitState {
   field: Field;
   ant: Ant;
   count: number;
   speed: number;
 }
 
-const initialState: initState = {
+export const initialState: InitState = {
   field: generateField(basicSize, defaultCellState),
   ant: generateAntPosition(0, basicSize, 0),
   count: 0,
@@ -26,17 +26,17 @@ export const playSlice = createSlice({
   name: 'play',
   initialState,
   reducers: {
-    played: (state, action: PayloadAction<initState>) => {
-      const { field, ant, count } = action.payload;
-      const newField = cloneDeep(field);
+    played: (state) => {
+      const { field, ant, count } = state;
+      // const newField = cloneDeep(field);
       // const newAnt = cloneDeep(ant);
-      const final = startGeneration(newField, ant, count);
+      const final = startGeneration(field, ant, count);
       state.field = final.field;
       state.ant = final.ant;
       state.count = final.count;
       // console.log(current(state));
     },
-    paused: (state, action: PayloadAction<initState>) => {
+    paused: (state, action: PayloadAction<InitState>) => {
       const { field, ant, count } = action.payload;
       state.field = field;
       state.ant = ant;
@@ -51,7 +51,7 @@ export const playSlice = createSlice({
       state.speed = initialState.speed;
       console.log(current(state));
     },
-    doneNext: (state, action: PayloadAction<initState>) => {
+    doneNext: (state, action: PayloadAction<InitState>) => {
       const { field, ant, count } = action.payload;
       const newField = cloneDeep(field);
       // const newAnt = cloneDeep(ant);
@@ -61,16 +61,15 @@ export const playSlice = createSlice({
       state.count = nextStep.count;
       console.log(current(state));
     },
-    doneBefore: (state, action: PayloadAction<initState>) => {
+    doneBefore: (state, action: PayloadAction<InitState>) => {
       const { field, ant, count } = action.payload;
       state.field = field;
       state.ant = ant;
       state.count = count;
       console.log(current(state));
     },
-    changedSpeed: (state, action: PayloadAction<initState>) => {
-      const { speed } = action.payload;
-      state.speed = speed;
+    changedSpeed: (state, action: PayloadAction<number>) => {
+      state.speed = action.payload;
       console.log(current(state));
     },
   },

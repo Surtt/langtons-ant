@@ -4,18 +4,19 @@ import { RootState } from '@/store';
 import { doneBefore } from '@/slices/playSliece';
 import { Button } from './Button';
 import { usePrevState } from '../hooks/usePrevState';
-import { initState } from '@/slices/playSliece';
+import { InitState } from '@/slices/playSliece';
 
-interface BeforeProps {
-  initialState: initState;
+export interface BeforeProps {
+  initialState: InitState;
 }
 
-export const Before: FC<BeforeProps> = () => {
+export const Before: FC = () => {
   const state = useSelector((state: RootState) => state);
   const dispatch = useDispatch();
   const prevState = usePrevState(state);
   return (
     <Button
+      role={'before'}
       title={'before'}
       path={
         <path

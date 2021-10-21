@@ -9,6 +9,7 @@ export const Play: FC = () => {
   const dispatch = useDispatch();
   return (
     <Button
+      role={'play'}
       title={'play'}
       path={<path d='m35.353 0 424.236 247.471-424.236 247.471z' />}
       onClick={() => dispatch(played(state))}

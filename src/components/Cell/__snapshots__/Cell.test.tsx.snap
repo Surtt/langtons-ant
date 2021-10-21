@@ -2,13 +2,24 @@
 
 exports[`Renders Cell 1`] = `
 <DocumentFragment>
-  <div
-    class="css-1h0vbn9"
-  >
-    <div
-      class="css-fzp5ig"
-      rotate="0"
-    />
-  </div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="css-1dvq4hu"
+          role="cell"
+        >
+          <div
+            class="css-1h0vbn9"
+          >
+            <div
+              class="css-fzp5ig"
+              rotate="0"
+            />
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </DocumentFragment>
 `;

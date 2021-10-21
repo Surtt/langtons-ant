@@ -11,11 +11,27 @@ const ant = {
 };
 
 it('Renders Cell', () => {
-  const { asFragment } = render(<Cell ant={ant} cell={cell} />);
+  const { asFragment } = render(
+    <table>
+      <tbody>
+        <tr>
+          <Cell ant={ant} cell={cell} />
+        </tr>
+      </tbody>
+    </table>
+  );
   expect(asFragment()).toMatchSnapshot();
 });
 
 it('renders Line role', () => {
-  render(<Cell ant={ant} cell={cell} />);
+  render(
+    <table>
+      <tbody>
+        <tr>
+          <Cell ant={ant} cell={cell} />
+        </tr>
+      </tbody>
+    </table>
+  );
   expect(screen.getByRole('cell')).toBeInTheDocument();
 });
