@@ -1,7 +1,6 @@
 import {
   AnyAction,
   createSlice,
-  current,
   PayloadAction,
   ThunkAction,
 } from '@reduxjs/toolkit';
@@ -11,9 +10,8 @@ import { Ant } from '@/helpers/Ant';
 import { generateAntPosition } from '@/helpers/Ant';
 import { RootState } from '@/store';
 
-const basicSize = 11;
+const basicSize = 21;
 const defaultCellState = false;
-
 export interface InitState {
   field: Field;
   ant: Ant;
@@ -21,13 +19,6 @@ export interface InitState {
   speed: number;
   isPlayed: boolean;
 }
-
-// export const initialState: InitState = {
-//   field: generateField(basicSize, defaultCellState),
-//   ant: generateAntPosition(0, basicSize, 0),
-//   count: 0,
-//   speed: 100,
-// };
 
 export const getInitialState = (): InitState => {
   return {

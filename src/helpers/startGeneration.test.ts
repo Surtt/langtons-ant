@@ -1,6 +1,5 @@
 import { startGeneration } from './startGeneration';
 import { generateField } from './Field';
-import { InitState } from '@/slices/playSliece';
 
 describe('Start generation', () => {
   it('Field 3X3 and ant', () => {

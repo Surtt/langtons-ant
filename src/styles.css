@@ -137,11 +137,11 @@ img {
 
 .btn__img {
   width: 20px;
-  fill: var(--text-color);
+  fill: var(--text-color) !important;
 }
 
-.tomato {
-  background-color: tomato;
+.blue {
+  background-color: var(--text-color);
 }
 
 .ant {
@@ -156,48 +156,3 @@ img {
   background-position: center;
   transform: rotate(90deg);
 }
-/* 
-.ant180 {
-  background: url("./img/ant.png") no-repeat;
-  background-size: contain;
-  background-position: center;
-  transform: rotate(180deg);
-}
-
-.ant270 {
-  background: url("./img/ant.png") no-repeat;
-  background-size: contain;
-  background-position: center;
-  transform: rotate(270deg);
-}
-
-.antalt {
-  background: url("./img/ant.png") no-repeat;
-  background-size: contain;
-  background-position: center;
-  background-color: grey;
-}
-
-.ant90alt {
-  background: url("./img/ant.png") no-repeat;
-  background-size: contain;
-  background-position: center;
-  transform: rotate(90deg);
-  background-color: grey;
-}
-
-.ant180alt {
-  background: url("./img/ant.png") no-repeat;
-  background-size: contain;
-  background-position: center;
-  transform: rotate(180deg);
-  background-color: grey;
-}
-
-.ant270alt {
-  background: url("./img/ant.png") no-repeat;
-  background-size: contain;
-  background-position: center;
-  transform: rotate(270deg);
-  background-color: grey;
-} */

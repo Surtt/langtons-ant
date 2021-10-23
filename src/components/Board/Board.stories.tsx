@@ -8,10 +8,12 @@ export default {
   title: 'Board/Board',
   component: Board,
   decorators: [
-    (Story) => <StretchWrap>
-      <Story />
-    </StretchWrap>
-  ]
+    (Story) => (
+      <StretchWrap>
+        <Story />
+      </StretchWrap>
+    ),
+  ],
 } as Meta;
 
 const Template: Story<BoardProps> = (args) => <Board {...args} />;
@@ -30,5 +32,5 @@ BoardWithAnt.args = {
     [false, false, false, false, false, false, false, false, false, false],
     [false, false, false, false, false, false, false, false, false, false],
   ],
-  ant: { xAnt: 4, yAnt: 4, rotation: 0 }
+  ant: { xAnt: 4, yAnt: 4, rotation: 0 },
 };

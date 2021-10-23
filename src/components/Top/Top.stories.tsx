@@ -6,6 +6,12 @@ import { Top, TopProps } from './Top';
 export default {
   title: 'Top/Top',
   component: Top,
+  parameters: {
+    backgrounds: {
+      default: 'blue',
+      values: [{ name: 'blue', value: '#337ab7' }],
+    },
+  },
 } as Meta;
 
 const Template: Story<TopProps> = (args) => <Top {...args} />;

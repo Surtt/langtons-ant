@@ -11,18 +11,16 @@ export interface ButtonProps {
    */
   title: string;
   /**
-   * Svg path
+   * Svg icon
    */
-  path: ReactChild;
+  children: ReactChild;
   onClick: () => void;
 }
 
-export const Button: FC<ButtonProps> = ({ role, title, path, onClick }) => {
+export const Button: FC<ButtonProps> = ({ role, title, children, onClick }) => {
   return (
     <Btn role={role} title={title} onClick={onClick}>
-      <Image xmlns='http://www.w3.org/2000/svg' viewBox='0 0 439.362 439.362'>
-        {path}
-      </Image>
+      {children}
     </Btn>
   );
 };
@@ -30,25 +28,12 @@ export const Button: FC<ButtonProps> = ({ role, title, path, onClick }) => {
 const Btn = styled.button`
   display: flex;
   margin-right: 0.5rem;
-  width: 35px;
-  height: 35px;
+  width: 24px;
+  height: 24px;
   padding: 0;
   border: none;
   cursor: pointer;
   &:last-child {
     margin-right: 0;
-  }
-`;
-
-const Image = styled.svg`
-  width: 100%;
-  padding: 5px;
-  background-color: #ffffff;
-  border: 1px solid #337ab7;
-  border-radius: 3px;
-  fill: #337ab7;
-  &:hover {
-    fill: #ffffff;
-    background-color: #337ab7;
   }
 `;

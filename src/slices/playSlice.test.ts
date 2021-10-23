@@ -60,9 +60,9 @@ describe('Play reducer', () => {
     it('initial state must have a (11 x 11 x false) field', () => {
       const actual = reducer(undefined, {} as Action);
       expect(actual.field).toEqual(
-        new Array<boolean[]>(11)
-          .fill(new Array<boolean>(11))
-          .map(() => new Array<boolean>(11).fill(false))
+        new Array<boolean[]>(21)
+          .fill(new Array<boolean>(21))
+          .map(() => new Array<boolean>(21).fill(false))
       );
     });
   });
@@ -156,7 +156,7 @@ describe('Play reducer', () => {
           isPlayed: false,
         })
       );
-      expect(nextState.field).toHaveLength(11);
+      expect(nextState.field).toHaveLength(21);
       expect(nextState.ant.rotation).toBe(0);
     });
   });

@@ -37,7 +37,7 @@ export const Header = styled.header`
 `;
 
 export const StretchWrap = styled.div`
-  width: 75vmin;
-  height: 75vmin;
+  width: 65vmin;
+  height: 65vmin;
   margin: 0 auto;
 `;

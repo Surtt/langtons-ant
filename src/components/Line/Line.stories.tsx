@@ -8,10 +8,12 @@ export default {
   title: 'Board/Line',
   component: Line,
   decorators: [
-    (Story) => <BoardTable style={{ width: '15rem' }}>
-      <Story />
-    </BoardTable>
-  ]
+    (Story) => (
+      <BoardTable style={{ width: '15rem' }}>
+        <Story />
+      </BoardTable>
+    ),
+  ],
 } as Meta;
 
 const Template: Story<LineProps> = (args) => <Line {...args} />;
@@ -20,6 +22,5 @@ export const LineExample = Template.bind({});
 LineExample.args = {
   line: [false, false, false, false, false, false, false, false, false, false],
   index: 0,
-  ant: { xAnt: 0, yAnt: 4, rotation: 0 }
+  ant: { xAnt: 0, yAnt: 4, rotation: 0 },
 };
-

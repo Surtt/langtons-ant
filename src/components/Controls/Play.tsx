@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, RootState } from '@/store';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '@/store';
 import { actions, recursiveGenerating } from '@/slices/playSliece';
 import { Button } from './Button';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
 const handleClick = (dispatch: AppDispatch) => {
   dispatch(actions.played());
@@ -12,11 +13,8 @@ const handleClick = (dispatch: AppDispatch) => {
 export const Play: FC = () => {
   const dispatch = useDispatch();
   return (
-    <Button
-      role={'play'}
-      title={'play'}
-      path={<path d='m35.353 0 424.236 247.471-424.236 247.471z' />}
-      onClick={() => handleClick(dispatch)}
-    />
+    <Button role={'play'} title={'play'} onClick={() => handleClick(dispatch)}>
+      <PlayArrowIcon className='btn__img' />
+    </Button>
   );
 };

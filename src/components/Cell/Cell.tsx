@@ -16,7 +16,7 @@ export interface CellProps {
 }
 
 export const Cell: FC<CellProps> = ({ ant, cell }) => {
-  const isColored = cell ? 'tomato' : '';
+  const isColored = cell ? 'blue' : '';
   return (
     <CellTd role='cell'>
       <Box>
@@ -51,10 +51,6 @@ const CellContent = styled.div`
   bottom: 0;
   right: 0;
 `;
-
-// const FilledCell = styled(EmptyCell)`
-//   background-color: orange;
-// `;
 
 interface RotateProps {
   rotate: number;

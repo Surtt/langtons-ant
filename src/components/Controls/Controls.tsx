@@ -5,38 +5,21 @@ import { Play } from './Play';
 import { Next } from './Next';
 import { Clear } from './Clear';
 import { Pause } from './Pause';
-import { Slider } from '@mui/material';
-import { useDispatch, useSelector } from 'react-redux';
-import { actions } from '@/slices/playSliece';
-import { AppDispatch, RootState } from '@/store';
-
-const handleSpeedChange = (e: Event, value: number, dispatch: AppDispatch) => {
-  dispatch(actions.changedSpeed(value));
-};
+import { SliderControl } from './SliderControl';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store';
 
 export const Controls: FC = () => {
   const state = useSelector((state: RootState) => state);
-  const dispatch = useDispatch();
-  const { speed } = state.present;
-  // console.log(speed);
   return (
     <>
       <ControlsWrap>
         <Before />
-        <Play />
-        <Pause />
+        {!state.present.isPlayed ? <Play /> : <Pause />}
         <Next />
         <Clear />
       </ControlsWrap>
-      <Slider
-        value={speed}
-        min={0.1}
-        max={100}
-        step={0.1}
-        aria-label='small'
-        valueLabelDisplay='auto'
-        onChange={(e, value) => handleSpeedChange(e, value as number, dispatch)}
-      />
+      <SliderControl />
     </>
   );
 };
