@@ -4,7 +4,6 @@ import { actions } from '@/slices/playSliece';
 import { Button } from './Button';
 
 export const Clear: FC = () => {
-  const state = useSelector((state) => state);
   const dispatch = useDispatch();
   return (
     <Button

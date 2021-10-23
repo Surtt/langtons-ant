@@ -8,7 +8,7 @@ import { Navigation } from './components/Navigation/Navigation';
 import { Routes } from './routes/Routes';
 import { RootState } from './store';
 
-const App: FC = () => {
+export const App: FC = () => {
   const { field: cells, ant, count } = useSelector(
     (state: RootState) => state.present
   );
