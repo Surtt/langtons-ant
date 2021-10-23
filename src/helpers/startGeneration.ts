@@ -44,10 +44,8 @@ export const startGeneration = (
       item.unshift(false);
       item.push(false);
     });
-    if (newAnt) {
-      newAnt.xAnt++;
-      newAnt.yAnt++;
-    }
+    newAnt.xAnt++;
+    newAnt.yAnt++;
   }
 
   return {

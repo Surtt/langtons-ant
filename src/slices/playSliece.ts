@@ -59,32 +59,21 @@ export const { reducer, actions } = createSlice({
       state.ant = ant;
       state.count = count;
     },
-    cleared: (state) => {
-      console.log(current(state));
-      const { field, ant, count, speed } = state;
-      state.field = getInitialState().field;
-      state.ant = getInitialState().ant;
-      state.count = getInitialState().count;
-      state.speed = getInitialState().speed;
-      state.isPlayed = getInitialState().isPlayed;
-      // console.log(current(state));
-    },
+    cleared: (state) => getInitialState(),
     doneNext: (state) => {
       const { field, ant, count } = state;
       const nextStep = startGeneration(field, ant, count);
+      state.isPlayed = false;
       state.field = nextStep.field;
       state.ant = nextStep.ant;
       state.count = nextStep.count;
     },
-    doneBefore: (state, action: PayloadAction<InitState>) => {
-      const { field, ant, count } = action.payload;
-      state.field = field;
-      state.ant = ant;
-      state.count = count;
+    doneBefore: (state) => {
+      state.isPlayed = false;
     },
     changedSpeed: (state, action: PayloadAction<number>) => {
+      state.isPlayed = true;
       state.speed = action.payload;
-      console.log(current(state));
     },
   },
 });
@@ -96,10 +85,10 @@ export const recursiveGenerating = (): ThunkAction<
   AnyAction
 > => (dispatch, getState) =>
   setTimeout(() => {
-    const { isPlayed } = getState();
+    const { isPlayed } = getState().present;
     if (isPlayed) {
       dispatch(actions.played());
-      dispatch(actions.changedSpeed(getState().speed));
+      dispatch(actions.changedSpeed(getState().present.speed));
       dispatch(recursiveGenerating());
     }
-  }, getState().speed);
+  }, getState().present.speed);

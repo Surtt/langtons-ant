@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { Middleware } from 'redux';
-import { reducer, recursiveUpdate } from '@/slices/playSliece';
+import undoable from 'redux-undo';
 import {
   persistStore,
   persistReducer,
@@ -12,61 +11,38 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+
+import { reducer } from '@/slices/playSliece';
+
 const persistConfig = {
   key: 'root',
   storage,
 };
 
-const persistedReducer = persistReducer(persistConfig, reducer);
-
-// let timerId: number | undefined;
-// export const playMiddleware: Middleware = (store, dispatch) => (next) => (
-//   action
-// ): void => {
-//   switch (action.type) {
-//     case 'play/played': {
-//       const speed = store.getState().speed;
-//       clearInterval(timerId);
-//       timerId = window.setInterval(() => next(action), speed);
-//       break;
-//     }
-//     case 'play/paused':
-//       clearInterval(timerId);
-//       next(action);
-//       break;
-//     case 'play/cleared':
-//       clearInterval(timerId);
-//       next(action);
-//       break;
-//     case 'play/doneNext':
-//       clearInterval(timerId);
-//       next(action);
-//       break;
-//     case 'play/doneBefore':
-//       clearInterval(timerId);
-//       next(action);
-//       break;
-//     case 'play/changedSpeed':
-//       next(action);
-//       break;
-//     default:
-//       return next(action);
-//   }
-// };
+const persistedReducer = persistReducer(
+  persistConfig,
+  undoable(reducer, {
+    undoType: 'play/doneBefore',
+    limit: 20,
+  })
+);
 
 const store = configureStore({
-  reducer: persistedReducer,
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
-    }),
+  reducer: undoable(reducer, {
+    undoType: 'play/doneBefore',
+    limit: 20,
+  }),
+  // middleware: (getDefaultMiddleware) =>
+  //   getDefaultMiddleware({
+  //     serializableCheck: {
+  //       ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+  //     },
+  //   }),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
-const persistor = persistStore(store);
+// const persistor = persistStore(store);
 
-export { store, persistor };
+export { store };

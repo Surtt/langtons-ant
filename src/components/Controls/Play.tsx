@@ -10,8 +10,6 @@ const handleClick = (dispatch: AppDispatch) => {
 };
 
 export const Play: FC = () => {
-  const state = useSelector((state: RootState) => state);
-  console.log(state.speed);
   const dispatch = useDispatch();
   return (
     <Button

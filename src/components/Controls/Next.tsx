@@ -1,11 +1,9 @@
 import React, { FC } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '@/store';
+import { useDispatch } from 'react-redux';
 import { actions } from '@/slices/playSliece';
 import { Button } from './Button';
 
 export const Next: FC = () => {
-  const state = useSelector((state: RootState) => state);
   const dispatch = useDispatch();
   return (
     <Button

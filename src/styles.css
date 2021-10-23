@@ -7,7 +7,7 @@
   --h2-fs: 1.5rem;
   --h3-fs: 1.25rem;
   --normal-fs: 1rem;
-  --small-fs: .7rem;
+  --small-fs: 0.7rem;
 
   /*========== Colors ==========*/
   --bg-color: 0, 0%, 97%;
@@ -21,8 +21,8 @@
   --border: 1px solid var(--border-color);
 
   /*========== Margins ==========*/
-  --mb-1: .1rem;
-  --mb-2: .5rem;
+  --mb-1: 0.1rem;
+  --mb-2: 0.5rem;
   --mb-3: 1rem;
   --mb-4: 1.5rem;
   --mb-5: 2rem;
@@ -31,7 +31,7 @@
 
 *,
 ::before,
-::after{
+::after {
   box-sizing: border-box;
 }
 
@@ -42,20 +42,25 @@ body {
   color: var(--text-color);
 }
 
-body, h1, h2, h3, p, ul{
+body,
+h1,
+h2,
+h3,
+p,
+ul {
   margin: 0;
 }
 
-ul{
+ul {
   padding: 0;
   list-style: none;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-img{
+img {
   max-width: 100%;
   height: auto;
 }
@@ -104,7 +109,7 @@ img{
 }
 
 .box:before {
-  content: "";
+  content: '';
   display: block;
   padding-top: 100%;
 }
@@ -135,8 +140,8 @@ img{
   fill: var(--text-color);
 }
 
-.orange {
-  background-color: orange;
+.tomato {
+  background-color: tomato;
 }
 
 .ant {

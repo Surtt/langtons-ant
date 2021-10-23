@@ -17,8 +17,8 @@ const handleSpeedChange = (e: Event, value: number, dispatch: AppDispatch) => {
 export const Controls: FC = () => {
   const state = useSelector((state: RootState) => state);
   const dispatch = useDispatch();
-  const { speed } = state;
-  console.log(speed);
+  const { speed } = state.present;
+  // console.log(speed);
   return (
     <>
       <ControlsWrap>

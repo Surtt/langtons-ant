@@ -16,7 +16,7 @@ export interface CellProps {
 }
 
 export const Cell: FC<CellProps> = ({ ant, cell }) => {
-  const isColored = cell ? 'orange' : '';
+  const isColored = cell ? 'tomato' : '';
   return (
     <CellTd role='cell'>
       <Box>

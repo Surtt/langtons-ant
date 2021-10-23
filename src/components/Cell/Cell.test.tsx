@@ -23,7 +23,7 @@ it('Renders Cell', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-it('renders Line role', () => {
+it('renders Cell role', () => {
   render(
     <table>
       <tbody>
@@ -34,4 +34,18 @@ it('renders Line role', () => {
     </table>
   );
   expect(screen.getByRole('cell')).toBeInTheDocument();
+});
+
+it('cell must be true', () => {
+  const cellTrue = true;
+  render(
+    <table>
+      <tbody>
+        <tr>
+          <Cell ant={ant} cell={cellTrue} />
+        </tr>
+      </tbody>
+    </table>
+  );
+  expect(screen.getAllByRole('cell')).toBeTruthy();
 });

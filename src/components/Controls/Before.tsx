@@ -1,20 +1,12 @@
 import React, { FC } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '@/store';
-// import { doneBefore } from '@/slices/playSliece';
+import { useDispatch } from 'react-redux';
 import { actions } from '@/slices/playSliece';
 import { Button } from './Button';
-import { usePrevState } from '../hooks/usePrevState';
-import { InitState } from '@/slices/playSliece';
-
-export interface BeforeProps {
-  initialState: InitState;
-}
+import { ActionCreators } from 'redux-undo';
 
 export const Before: FC = () => {
-  const state = useSelector((state: RootState) => state);
+  // console.log(actions);
   const dispatch = useDispatch();
-  const prevState = usePrevState(state);
   return (
     <Button
       role={'before'}
@@ -28,7 +20,7 @@ export const Before: FC = () => {
             c3.621,3.617,6.667,4.859,9.138,3.72c2.478-1.144,3.716-4.189,3.716-9.138V9.547C365.862,4.599,364.624,1.553,362.146,0.412z'
         />
       }
-      onClick={() => dispatch(actions.doneBefore(prevState))}
+      onClick={() => dispatch(actions.doneBefore())}
     />
   );
 };
