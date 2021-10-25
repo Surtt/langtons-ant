@@ -30,9 +30,13 @@ export const getInitialState = (): InitState => {
   };
 };
 
+const stateFromStorage = localStorage.getItem('state');
+
 export const { reducer, actions } = createSlice({
   name: 'play',
-  initialState: getInitialState(),
+  initialState: stateFromStorage
+    ? JSON.parse(stateFromStorage)
+    : getInitialState(),
   reducers: {
     played: (state) => {
       const { field, ant, count, speed } = state;
