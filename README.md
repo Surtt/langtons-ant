@@ -42,7 +42,7 @@ make chromatic
 
 ### Ссылка на проект
 
-https://langtons-ant-cqwwxdb83-surtt.vercel.app/
+[Demo](https://langtons-ant-git-hw7-surtt.vercel.app/)
 
 ### ДЗ 1
 
