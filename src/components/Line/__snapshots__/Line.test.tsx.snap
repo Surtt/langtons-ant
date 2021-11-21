@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Line 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr
+        role="line"
+      >
+        <td
+          class="css-1dvq4hu"
+          role="cell"
+        >
+          <div
+            class="css-1h0vbn9"
+          >
+            <div
+              class="css-fzp5ig"
+              rotate="0"
+            />
+          </div>
+        </td>
+        <td
+          class="css-1dvq4hu"
+          role="cell"
+        >
+          <div
+            class="css-1h0vbn9"
+          >
+            <div
+              class=" css-bdbrua"
+            />
+          </div>
+        </td>
+        <td
+          class="css-1dvq4hu"
+          role="cell"
+        >
+          <div
+            class="css-1h0vbn9"
+          >
+            <div
+              class=" css-bdbrua"
+            />
+          </div>
+        </td>
+        <td
+          class="css-1dvq4hu"
+          role="cell"
+        >
+          <div
+            class="css-1h0vbn9"
+          >
+            <div
+              class=" css-bdbrua"
+            />
+          </div>
+        </td>
+        <td
+          class="css-1dvq4hu"
+          role="cell"
+        >
+          <div
+            class="css-1h0vbn9"
+          >
+            <div
+              class=" css-bdbrua"
+            />
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
